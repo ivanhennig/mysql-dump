@@ -10,7 +10,7 @@
 # Dump database script
 #
 # Usage:
-# ./db_dump.sh dbname connectionfile all/tables/views/procs
+# ./db-dump.sh dbname connectionfile all/tables/views/procs
 #
 # The connection file should be in the format:
 #
