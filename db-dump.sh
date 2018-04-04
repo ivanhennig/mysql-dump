@@ -32,7 +32,6 @@ set -e
 # ----------
 WITH_GZIP=1
 while getopts ":z" opt; do
-echo $opt
   case $opt in
     z)
       WITH_GZIP=0
