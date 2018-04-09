@@ -47,6 +47,7 @@ fi
 # Stage files, commit and push.
 # ----------
 cd $WORKFOLDER
+git pull -q
 git add .
 git add ./*
 git commit -m "Dump"
