@@ -147,11 +147,6 @@ then
         LINECOUNT=`wc -l <${TMPFILE}`
         ((LINECOUNT -= 9))
         head -${LINECOUNT} <${TMPFILE} | $GZIP >$FILE
-
-        #
-        # Remove sql file, leave gz file
-        #
-        rm -f ${FILE}
     done
     rm -f ${TMPFILE}
 
@@ -198,12 +193,6 @@ then
         (echo -e "DROP ${PROC_TYPE} IF EXISTS $DB.$PROC;\nDELIMITER //\n";
         cat ${TMPFILE2};
         echo -e "\n//\nDELIMITER ;\n") | $GZIP >$FILE
-
-        #
-        # Remove sql file, leave gz file
-        #
-        rm -f ${FILE}
-
     done
     rm -f ${TMPFILE}
 fi
