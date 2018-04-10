@@ -114,7 +114,7 @@ then
     for TABLE in $($MYSQL -e "select TABLE_NAME from information_schema.tables where TABLE_SCHEMA = '$DB' AND TABLE_TYPE = 'BASE TABLE'" | egrep -v 'TABLE_NAME'); do
         FILE="$DUMP_DIR/$DB/tables/${TABLE}${OUTPUT_EXT}"
         echo "Dumping $DB.$TABLE to $FILE"
-        $MYSQLDUMP --skip-add-locks --skip-disable-keys --skip-set-charset --lock-tables=false --single-transaction --no-data --triggers --skip-dump-date $TABLE | $GZIP >$FILE
+        $MYSQLDUMP --skip-add-locks --skip-disable-keys --skip-set-charset --lock-tables=false --single-transaction --no-data --triggers --skip-dump-date --skip-comments $TABLE | $GZIP >$FILE
     done
 
     if [ "$TABLE" = "" ]; then
