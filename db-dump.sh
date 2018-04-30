@@ -195,4 +195,5 @@ then
         echo -e "\n//\nDELIMITER ;\n") | $GZIP >$FILE
     done
     rm -f ${TMPFILE}
+    rm -f ${TMPFILE2}
 fi
